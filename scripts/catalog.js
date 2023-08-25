@@ -1,4 +1,4 @@
-const json = "../sources/products.json";
+const json = "./sources/products.json";
 
 async function apiFetch(json, func) {
   try {
