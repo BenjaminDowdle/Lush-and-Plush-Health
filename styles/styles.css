@@ -1,0 +1,137 @@
+:root {
+  --primary-color: #f0ccba;
+  --secondary-color: #37526d;
+  --accent-1: #c6e2e9;
+  --accent-2: #ebebc7;
+  --accent-3: #ebc091;
+}
+
+/* Reset default margin and padding for list items */
+.navbar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--accent-2); /* Set your desired background color */
+  padding: 8px 10px; /* Adjust the padding as needed */
+  font-family: "Charm", cursive;
+  font-size: 18px;
+  box-shadow: 0px 4px 8px -2px #7d95ad;
+}
+
+.navbar img {
+  width: 50px; /* Adjust the logo size as needed */
+  height: auto;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #000; /* Set the text color */
+  padding: 15px 30px;
+  border-radius: 10px;
+  margin: 0 15px; /* Adjust the spacing between links */
+  transition-duration: 0.3s; /* Add smooth color transition */
+}
+
+.navbar a:hover {
+  background-color: var(--primary-color); /* Change text color on hover */
+}
+
+.navbar a:last-child {
+  margin-right: 0; /* Remove right margin from the last link */
+}
+
+.navbar img:last-child {
+  width: 25px; /* Adjust the shopping cart icon size */
+}
+
+#shopping-cart {
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar a {
+    margin: 10px 0;
+  }
+}
+
+body {
+  background-color: var(--accent-1);
+}
+
+main {
+  text-align: center;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  height: 100px;
+}
+
+#hero-img {
+  width: 100%;
+  box-shadow: 0px 4px 8px 2px #7d95ad;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Charm", cursive;
+  font-weight: 400;
+}
+
+.divider {
+  width: 50%;
+  max-width: 300px;
+  display: block;
+  margin: 25px auto;
+}
+
+#shop {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+}
+
+#catalog {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  grid-column: 2;
+}
+
+#catalog img {
+  width: 75%;
+  max-width: 200px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 8px 1px #7d95ad;
+}
+
+.card{
+  /* background-color: var(--accent-2); */
+  border-radius: 10px;
+  padding: 15px;
+  /* box-shadow: 0px 2px 8px 1px #7d95ad; */
+  /* border: var(--secondary-color) solid 5px; */
+}
+
+.card h3 {
+  font-weight: 700;
+  margin-bottom: 0px;
+}
+
+.card p {
+  margin-top: 0px;
+}
+
+
