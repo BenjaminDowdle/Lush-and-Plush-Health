@@ -4,43 +4,43 @@
       "id": "1",
       "name": "After the Rain",
       "price": "$19.99",
-      "image": "./images/after-the-rain.jpg"
+      "image": "../images/after-the-rain.jpg"
     },
     {
       "id": "2",
       "name": "Floral Energy",
       "price": "$19.99",
-      "image": "./images/natural-bliss.jpg"
+      "image": "../images/natural-bliss.jpg"
     },
     {
       "id": "3",
       "name": "Floral Herb",
       "price": "$14.99",
-      "image": "./images/floral-herb.jpg"
+      "image": "../images/floral-herb.jpg"
     },
     {
       "id": "4",
       "name": "Honey and Cherry Blossom Bundle",
       "price": "$31.99",
-      "image": "./images/honey-and-cherry-blossom.jpg"
+      "image": "../images/honey-and-cherry-blossom.jpg"
     },
     {
       "id": "5",
       "name": "Key Lime",
       "price": "$14.99",
-      "image": "./images/key-lime-soap.jpg"
+      "image": "../images/key-lime-soap.jpg"
     },
     {
       "id": "6",
       "name": "Lemon Sunshine",
       "price": "$19.99",
-      "image": "./images/lemon-sunshine.jpg"
+      "image": "../images/lemon-sunshine.jpg"
     },
     {
       "id": "7",
       "name": "Soap 4 Pack",
       "price": "$39.99",
-      "image": "./images/soap-four-pack.jpg"
+      "image": "../images/soap-four-pack.jpg"
     }
   ]
 }
