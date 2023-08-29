@@ -27,7 +27,7 @@ function createCard(products) {
     let button = document.createElement("button");
     let card = document.createElement("div");
 
-    img.setAttribute("src", soap.image);
+    img.setAttribute("src", soap.small);
     button.setAttribute("type", "button");
     button.innerText = "Add to Cart";
     name.innerText = soap.name;
