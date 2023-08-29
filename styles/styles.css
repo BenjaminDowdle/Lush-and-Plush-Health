@@ -78,7 +78,7 @@ footer {
 }
 
 #hero-img {
-  width: 100%;
+  width: 75%;
   box-shadow: 0px 4px 8px 2px #7d95ad;
 }
 
@@ -102,7 +102,7 @@ h4 {
   grid-template-columns: 1fr 6fr 1fr;
 }
 
-#catalog {
+.catalog {
   margin: 50px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -110,19 +110,28 @@ h4 {
   grid-column: 2;
 }
 
-#catalog img {
-  width: 75%;
+#spotlight{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#spotlight img {
+  max-width: 150px;
+}
+
+
+.card img {
+  width: 80%;
   max-width: 200px;
   border-radius: 5px;
   box-shadow: 0px 2px 8px 1px #7d95ad;
 }
 
 .card{
-  /* background-color: var(--accent-2); */
   border-radius: 10px;
   padding: 15px;
-  /* box-shadow: 0px 2px 8px 1px #7d95ad; */
-  /* border: var(--secondary-color) solid 5px; */
 }
 
 .card h3 {
