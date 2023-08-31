@@ -1,4 +1,4 @@
-const json = "./sources/products.json";
+const json = "https://benjamindowdle.github.io/Lush-and-Plush-Health/sources/products.json";
 
 async function apiFetch(json, func) {
   try {

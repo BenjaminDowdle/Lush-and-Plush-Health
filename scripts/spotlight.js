@@ -1,4 +1,4 @@
-const json = "./sources/products.json";
+const json = "https://benjamindowdle.github.io/Lush-and-Plush-Health/sources/products.json";
 
 async function apiFetch(json, func) {
   try {
@@ -36,7 +36,7 @@ function generateSpotlights(data) {
         let button = document.createElement("button");
         let card = document.createElement("div");
 
-        img.setAttribute("src", data.soaps[numbers[i]].image);
+        img.setAttribute("src", data.soaps[numbers[i]].small);
         button.setAttribute("type", "button");
         button.innerText = "Add to Cart";
         name.innerText = data.soaps[numbers[i]].name;
