@@ -29,6 +29,7 @@ function createCard(products) {
 
     img.setAttribute("src", soap.small);
     button.setAttribute("type", "button");
+    button.setAttribute("class", "add-to-cart")
     button.innerText = "Add to Cart";
     name.innerText = soap.name;
     price.innerText = soap.price;

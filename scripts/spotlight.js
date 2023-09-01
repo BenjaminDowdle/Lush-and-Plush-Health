@@ -38,6 +38,7 @@ function generateSpotlights(data) {
 
         img.setAttribute("src", data.soaps[numbers[i]].small);
         button.setAttribute("type", "button");
+        button.setAttribute("class", "add-to-cart")
         button.innerText = "Add to Cart";
         name.innerText = data.soaps[numbers[i]].name;
         price.innerText = data.soaps[numbers[i]].price;

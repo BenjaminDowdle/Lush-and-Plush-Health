@@ -36,7 +36,8 @@
 }
 
 .navbar a:hover {
-  background-color: var(--primary-color); /* Change text color on hover */
+  background-color: var(--primary-color);
+  box-shadow: 0px 2px 8px 1px #c7c79e; /* Change text color on hover */
 }
 
 .navbar a:last-child {
@@ -72,12 +73,12 @@ body {
 main {
   text-align: center;
   min-height: 76.3vh;
-  padding: 10px 20%;
 }
 
 footer {
   background-color: var(--secondary-color);
   height: 100px;
+  margin-top: 50px;
 }
 
 #hero-img {
@@ -91,6 +92,11 @@ h3,
 h4 {
   font-family: "Charm", cursive;
   font-weight: 400;
+}
+
+p {
+  font-family: 'BenchNine', sans-serif;
+  font-size: 20px;
 }
 
 .divider {
@@ -118,6 +124,26 @@ h4 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+#about {
+  padding: 20px 20%;
+}
+
+#email {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #000;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  font-family: 'BenchNine', sans-serif;
+  font-size: 24px;
+  box-shadow: 0px 2px 8px 1px #7d95ad;
+}
+
+#email:hover {
+  background-color: #e8b79e;
+  
 }
 
 .card img {
@@ -149,6 +175,7 @@ button {
   border-radius: 20px;
   font-family: 'BenchNine', sans-serif;
   font-size: 24px;
+  box-shadow: 0px 2px 8px 1px #7d95ad;
 }
 
 button:hover {
