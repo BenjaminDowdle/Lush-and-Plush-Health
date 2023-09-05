@@ -11,4 +11,17 @@
   #catalog {
     grid-template-columns: 1fr 1fr;
   }
+
+  .cart {
+    margin: 25px 25px;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .receipt {
+    grid-column: 2;
+    width: 100%;
+    min-width: none;
+    max-width: 800px;
+  }
 }
