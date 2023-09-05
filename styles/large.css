@@ -1,0 +1,5 @@
+@media (min-width: 1278px) {
+  #catalog {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

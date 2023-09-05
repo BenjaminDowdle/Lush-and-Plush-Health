@@ -1,18 +1,14 @@
 @media (min-width: 768px) {
   #nav-links {
     width: 50%;
-    justify-content: center;
+    justify-content: space-between;
   }
 
-  #nav-links:last-child {
-    justify-content: end;
+  #spotlight {
+    flex-direction: row;
   }
 
-  .navbar {
-    justify-content: center;
-  }
-
-  .navbar:first-child {
-    justify-content: start;
+  #catalog {
+    grid-template-columns: 1fr 1fr;
   }
 }
