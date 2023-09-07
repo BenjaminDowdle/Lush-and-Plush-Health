@@ -94,7 +94,6 @@ footer {
   flex-direction: column;
   background-color: var(--secondary-color);
   min-height: 100px;
-  margin: auto;
   margin-top: 50px;
 }
 
@@ -230,7 +229,6 @@ button:hover {
   font-family: "BenchNine", sans-serif;
   font-size: 30px;
   box-shadow: 0px 2px 8px 1px #7d95ad;
-  margin: auto;
 }
 
 .cart {
@@ -247,7 +245,7 @@ button:hover {
 .receipt {
   min-height: 100px;
   background-color: rgb(241, 240, 240);
-  min-width: 300px;
+  min-width: 450px;
   border-radius: 10px;
   margin: auto;
 }
