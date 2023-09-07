@@ -15,7 +15,7 @@
   .cart {
     margin: 25px 25px;
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 2fr 1fr;
   }
 
   .receipt {
