@@ -1,4 +1,5 @@
-const json = "https://benjamindowdle.github.io/Lush-and-Plush-Health/sources/products.json";
+const json =
+  "https://benjamindowdle.github.io/Lush-and-Plush-Health/sources/products.json";
 
 async function apiFetch(json, func) {
   try {
@@ -6,7 +7,6 @@ async function apiFetch(json, func) {
     if (response.ok) {
       const data = await response.json();
       func(data);
-      console.log(data);
     } else {
       throw Error(await response.text());
     }
@@ -17,26 +17,42 @@ async function apiFetch(json, func) {
 
 apiFetch(json, createCard);
 
+
 function createCard(products) {
   let catalog = document.querySelector("#catalog");
+  let items = []
 
-  products.soaps.forEach((soap) => {
+  products.soaps.forEach((soap, index) => {
     let img = document.createElement("img");
     let name = document.createElement("h3");
     let price = document.createElement("p");
     let button = document.createElement("button");
     let card = document.createElement("div");
 
-    img.setAttribute("src", soap.small);
     button.setAttribute("type", "button");
-    button.setAttribute("class", "add-to-cart")
+    button.setAttribute("class", "add-to-cart");
+    button.setAttribute("id", index)
     button.innerText = "Add to Cart";
+    
+
+    img.setAttribute("src", soap.small);
     name.innerText = soap.name;
     price.innerText = soap.price;
 
-    card.setAttribute("class", "card")
+    card.setAttribute("class", "card");
     card.append(img, name, price, button);
 
     catalog.append(card);
+    
+    button.addEventListener('click', () => {
+      let item = {
+        name: soap.name,
+        price: soap.price,
+        small: soap.small
+      }
+      items.push(item)
+      localStorage.setItem("items", JSON.stringify(items))
+
+    })
   });
 }
