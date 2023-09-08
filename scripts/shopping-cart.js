@@ -28,5 +28,7 @@ function displayOrders(items) {
 
     priceTotal += parseFloat(item.price);
   });
-  console.log(priceTotal);
+  let total = document.createElement("h2");
+  total.textContent = `Total: $${priceTotal.toFixed(2)}`;
+  receipt.append(total);
 }
