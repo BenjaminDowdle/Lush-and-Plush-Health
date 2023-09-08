@@ -17,10 +17,9 @@ async function apiFetch(json, func) {
 
 apiFetch(json, createCard);
 
-
 function createCard(products) {
   let catalog = document.querySelector("#catalog");
-  let items = []
+  let items = [];
 
   products.soaps.forEach((soap, index) => {
     let img = document.createElement("img");
@@ -31,28 +30,26 @@ function createCard(products) {
 
     button.setAttribute("type", "button");
     button.setAttribute("class", "add-to-cart");
-    button.setAttribute("id", index)
+    button.setAttribute("id", index);
     button.innerText = "Add to Cart";
-    
 
     img.setAttribute("src", soap.small);
     name.innerText = soap.name;
-    price.innerText = soap.price;
+    price.innerText = `$${soap.price}`;
 
     card.setAttribute("class", "card");
     card.append(img, name, price, button);
 
     catalog.append(card);
-    
-    button.addEventListener('click', () => {
+
+    button.addEventListener("click", () => {
       let item = {
         name: soap.name,
         price: soap.price,
-        small: soap.small
-      }
-      items.push(item)
-      localStorage.setItem("items", JSON.stringify(items))
-
-    })
+        small: soap.small,
+      };
+      items.push(item);
+      localStorage.setItem("items", JSON.stringify(items));
+    });
   });
 }

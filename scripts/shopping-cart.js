@@ -18,13 +18,15 @@ function displayOrders(items) {
     img.setAttribute("src", item.small);
     img.setAttribute("class", "order-image");
     name.textContent = item.name;
-    price.textContent = item.price;
+    price.textContent = `$${item.price}`;
 
     card.append(img, name, price);
 
     order.append(card);
 
     // -----RECEIPT-----
+
+    priceTotal += parseFloat(item.price);
   });
-  console.log();
+  console.log(priceTotal);
 }
