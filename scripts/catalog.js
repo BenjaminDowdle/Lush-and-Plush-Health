@@ -20,6 +20,11 @@ apiFetch(json, createCard);
 function createCard(products) {
   let catalog = document.querySelector("#catalog");
   let items = [];
+  if ("items" in localStorage) {
+    items = JSON.parse(localStorage.getItem("items"));
+  } else {
+    items = [];
+  }
 
   products.soaps.forEach((soap, index) => {
     let img = document.createElement("img");
@@ -50,6 +55,8 @@ function createCard(products) {
       };
       items.push(item);
       localStorage.setItem("items", JSON.stringify(items));
+
+      button.innerText = "Added";
     });
   });
 }

@@ -22,6 +22,11 @@ function generateSpotlights(data) {
   let numbers = [];
   let spotlight = document.querySelector("#spotlight");
   let items = [];
+  if ("items" in localStorage) {
+    items = JSON.parse(localStorage.getItem("items"));
+  } else {
+    items = [];
+  }
 
   while (numbers.length < count) {
     let number = Math.floor(Math.random() * data.soaps.length);
@@ -58,6 +63,8 @@ function generateSpotlights(data) {
       };
       items.push(item);
       localStorage.setItem("items", JSON.stringify(items));
+
+      button.innerText = "Added";
     });
   }
 }
