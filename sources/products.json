@@ -3,56 +3,49 @@
     {
       "id": "0",
       "name": "After the Rain",
-      "basePrice": "19.99",
-      "price": "0",
+      "price": "19.99",
       "image": "https://benjamindowdle.github.io/Lush-and-Plush-Health/images/after-the-rain.jpg",
       "small": "https://benjamindowdle.github.io/Lush-and-Plush-Health/images/after-the-rain-small.jpg"
     },
     {
       "id": "1",
       "name": "Floral Energy",
-      "basePrice": "19.99",
-      "price": "0",
+      "price": "19.99",
       "image": "https://benjamindowdle.github.io/Lush-and-Plush-Health/images/natural-bliss.jpg",
       "small": "https://benjamindowdle.github.io/Lush-and-Plush-Health/images/natural-bliss-small.jpg"
     },
     {
       "id": "2",
       "name": "Floral Herb",
-      "basePrice": "14.99",
-      "price": "0",
+      "price": "14.99",
       "image": "https://benjamindowdle.github.io/Lush-and-Plush-Health/images/floral-herb.jpg",
       "small": "https://benjamindowdle.github.io/Lush-and-Plush-Health/images/floral-herb-small.jpg"
     },
     {
       "id": "3",
       "name": "Honey and Cherry Blossom Bundle",
-      "basePrice": "31.99",
-      "price": "0",
+      "price": "31.99",
       "image": "https://benjamindowdle.github.io/Lush-and-Plush-Health/images/honey-and-cherry-blossom.jpg",
       "small": "https://benjamindowdle.github.io/Lush-and-Plush-Health/images/honey-and-cherry-blossom-small.jpg"
     },
     {
       "id": "4",
       "name": "Key Lime",
-      "basePrice": "14.99",
-      "price": "0",
+      "price": "14.99",
       "image": "https://benjamindowdle.github.io/Lush-and-Plush-Health/images/key-lime-soap.jpg",
       "small": "https://benjamindowdle.github.io/Lush-and-Plush-Health/images/key-lime-soap-small.jpg"
     },
     {
       "id": "5",
       "name": "Lemon Sunshine",
-      "basePrice": "19.99",
-      "price": "0",
+      "price": "19.99",
       "image": "https://benjamindowdle.github.io/Lush-and-Plush-Health/images/lemon-sunshine.jpg",
       "small": "https://benjamindowdle.github.io/Lush-and-Plush-Health/images/lemon-sunshine-small.jpg"
     },
     {
       "id": "6",
       "name": "Soap 4 Pack",
-      "basePrice": "39.99",
-      "price": "0",
+      "price": "39.99",
       "image": "https://benjamindowdle.github.io/Lush-and-Plush-Health/images/soap-four-pack.jpg",
       "small": "https://benjamindowdle.github.io/Lush-and-Plush-Health/images/soap-four-pack-small.jpg"
     }
