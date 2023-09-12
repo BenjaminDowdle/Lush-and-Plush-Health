@@ -42,7 +42,7 @@ function createCard(products) {
 
     img.setAttribute("src", soap.small);
     name.innerText = soap.name;
-    price.innerText = `$${soap.basePrice}`;
+    price.innerText = `$${soap.price}`;
 
     card.setAttribute("class", "card");
     card.append(img, name, price, button);
@@ -54,7 +54,6 @@ function createCard(products) {
         let item = {
           name: soap.name,
           price: soap.price,
-          basePrice: soap.basePrice,
           small: soap.small,
           quantity: 1,
         };

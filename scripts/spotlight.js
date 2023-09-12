@@ -49,7 +49,7 @@ function generateSpotlights(data) {
     button.setAttribute("class", "add-to-cart");
     button.innerText = "Add to Cart";
     name.innerText = data.soaps[numbers[i]].name;
-    basePrice.innerText = `$${data.soaps[numbers[i]].basePrice}`;
+    basePrice.innerText = `$${data.soaps[numbers[i]].price}`;
 
     card.setAttribute("class", "card");
     card.append(img, name, basePrice, button);
@@ -61,7 +61,6 @@ function generateSpotlights(data) {
         let item = {
           name: data.soaps[numbers[i]].name,
           price: data.soaps[numbers[i]].price,
-          basePrice: data.soaps[numbers[i]].basePrice,
           small: data.soaps[numbers[i]].small,
           quantity: 1,
         };
