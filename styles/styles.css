@@ -202,6 +202,7 @@ button {
   font-family: "BenchNine", sans-serif;
   font-size: 24px;
   box-shadow: 0px 2px 8px 1px #7d95ad;
+  min-width: 175px;
 }
 
 button:hover {
@@ -259,6 +260,19 @@ button:hover {
   margin: 15px 50px;
   padding: 10px 10px;
   background-color: var(--primary-color);
+}
+
+.quantity-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.quantity-adjustment {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }
 
 .receipt {

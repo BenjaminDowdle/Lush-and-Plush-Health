@@ -20,6 +20,7 @@ apiFetch(json, createCard);
 function createCard(products) {
   let catalog = document.querySelector("#catalog");
   let items = [];
+
   if ("items" in localStorage) {
     items = JSON.parse(localStorage.getItem("items"));
   } else {
@@ -32,6 +33,7 @@ function createCard(products) {
     let price = document.createElement("p");
     let button = document.createElement("button");
     let card = document.createElement("div");
+    let clicked = false;
 
     button.setAttribute("type", "button");
     button.setAttribute("class", "add-to-cart");
@@ -40,7 +42,7 @@ function createCard(products) {
 
     img.setAttribute("src", soap.small);
     name.innerText = soap.name;
-    price.innerText = `$${soap.price}`;
+    price.innerText = `$${soap.basePrice}`;
 
     card.setAttribute("class", "card");
     card.append(img, name, price, button);
@@ -48,15 +50,22 @@ function createCard(products) {
     catalog.append(card);
 
     button.addEventListener("click", () => {
-      let item = {
-        name: soap.name,
-        price: soap.price,
-        small: soap.small,
-      };
-      items.push(item);
-      localStorage.setItem("items", JSON.stringify(items));
+      if (clicked == false) {
+        let item = {
+          name: soap.name,
+          price: soap.price,
+          basePrice: soap.basePrice,
+          small: soap.small,
+          quantity: 1,
+        };
+        items.push(item);
+        localStorage.setItem("items", JSON.stringify(items));
 
-      button.innerText = "Added";
+        button.innerText = "View Cart";
+        clicked = true;
+      } else {
+        window.location.href = "shopping-cart.html";
+      }
     });
   });
 }

@@ -39,32 +39,40 @@ function generateSpotlights(data) {
   for (let i = 0; i <= count; i++) {
     let img = document.createElement("img");
     let name = document.createElement("h3");
-    let price = document.createElement("p");
+    let basePrice = document.createElement("p");
     let button = document.createElement("button");
     let card = document.createElement("div");
+    let clicked = false;
 
     img.setAttribute("src", data.soaps[numbers[i]].small);
     button.setAttribute("type", "button");
     button.setAttribute("class", "add-to-cart");
     button.innerText = "Add to Cart";
     name.innerText = data.soaps[numbers[i]].name;
-    price.innerText = `$${data.soaps[numbers[i]].price}`;
+    basePrice.innerText = `$${data.soaps[numbers[i]].basePrice}`;
 
     card.setAttribute("class", "card");
-    card.append(img, name, price, button);
+    card.append(img, name, basePrice, button);
 
     spotlight.append(card);
 
     button.addEventListener("click", () => {
-      let item = {
-        name: data.soaps[numbers[i]].name,
-        price: data.soaps[numbers[i]].price,
-        small: data.soaps[numbers[i]].small,
-      };
-      items.push(item);
-      localStorage.setItem("items", JSON.stringify(items));
+      if (clicked == false) {
+        let item = {
+          name: data.soaps[numbers[i]].name,
+          price: data.soaps[numbers[i]].price,
+          basePrice: data.soaps[numbers[i]].basePrice,
+          small: data.soaps[numbers[i]].small,
+          quantity: 1,
+        };
+        items.push(item);
+        localStorage.setItem("items", JSON.stringify(items));
 
-      button.innerText = "Added";
+        button.innerText = "View Cart";
+        clicked = true;
+      } else {
+        window.location.href = "shopping-cart.html";
+      }
     });
   }
 }
