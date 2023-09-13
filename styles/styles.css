@@ -265,6 +265,12 @@ button:hover {
 .quantity-icon {
   width: 20px;
   height: 20px;
+  cursor: pointer;
+}
+
+.trash-icon {
+  width: 20px;
+  cursor: pointer;
 }
 
 .quantity-adjustment {

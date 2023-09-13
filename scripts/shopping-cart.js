@@ -25,6 +25,7 @@ function displayOrders(items, subtotal) {
     let name = document.createElement("p");
     let price = document.createElement("em");
 
+    let trash = document.createElement("img");
     let quantityAdjustment = document.createElement("div");
     let quantity = document.createElement("p");
     let increase = document.createElement("img");
@@ -69,9 +70,22 @@ function displayOrders(items, subtotal) {
       }
     });
 
+    trash.setAttribute("src", "./images/delete.png");
+    trash.setAttribute("class", "trash-icon")
+    trash.addEventListener("click", () => {
+      items = JSON.parse(localStorage.getItem("items"))
+      let object = items.find(obj => obj.key == item.key)
+      let index = items.indexOf(object)
+      items.splice(index, 1)
+      console.log(object)
+      localStorage.removeItem(item.key)
+      localStorage.setItem("items", JSON.stringify(items))
+      location.reload()
+    })
+
     quantityAdjustment.append(increase, quantity, decrease);
 
-    card.append(img, name, price, quantityAdjustment);
+    card.append(img, name, price, quantityAdjustment, trash);
 
     order.append(card);
 
