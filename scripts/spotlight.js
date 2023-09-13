@@ -1,5 +1,6 @@
 const json =
   "https://benjamindowdle.github.io/Lush-and-Plush-Health/sources/products.json";
+let items = []
 
 async function apiFetch(json, func) {
   try {
@@ -21,11 +22,10 @@ function generateSpotlights(data) {
   const count = 3;
   let numbers = [];
   let spotlight = document.querySelector("#spotlight");
-  let items = [];
   if ("items" in localStorage) {
     items = JSON.parse(localStorage.getItem("items"));
   } else {
-    items = [];
+    localStorage.setItem("items", JSON.stringify(items));
   }
 
   while (numbers.length < count) {
@@ -39,7 +39,7 @@ function generateSpotlights(data) {
   for (let i = 0; i <= count; i++) {
     let img = document.createElement("img");
     let name = document.createElement("h3");
-    let basePrice = document.createElement("p");
+    let price = document.createElement("p");
     let button = document.createElement("button");
     let card = document.createElement("div");
     let clicked = false;
@@ -49,29 +49,35 @@ function generateSpotlights(data) {
     button.setAttribute("class", "add-to-cart");
     button.innerText = "Add to Cart";
     name.innerText = data.soaps[numbers[i]].name;
-    basePrice.innerText = `$${data.soaps[numbers[i]].price}`;
+    price.innerText = `$${data.soaps[numbers[i]].price}`;
 
     card.setAttribute("class", "card");
-    card.append(img, name, basePrice, button);
+    card.append(img, name, price, button);
 
     spotlight.append(card);
 
     button.addEventListener("click", () => {
-      if (clicked == false) {
+      let items = JSON.parse(localStorage.getItem("items"))
         let item = {
+          key: data.soaps[numbers[i]].id,
           name: data.soaps[numbers[i]].name,
           price: data.soaps[numbers[i]].price,
           small: data.soaps[numbers[i]].small,
           quantity: 1,
         };
-        items.push(item);
-        localStorage.setItem("items", JSON.stringify(items));
 
-        button.innerText = "View Cart";
-        clicked = true;
-      } else {
-        window.location.href = "shopping-cart.html";
-      }
+        if (clicked == true) {
+          window.location.href = "shopping-cart.html";
+        } else if (item.key in localStorage) {
+          window.alert("This item is already in the cart. Redirecting to the Cart...")
+          window.location.href = "shopping-cart.html";
+        } else {
+          items.push(item);
+          localStorage.setItem(item.key, JSON.stringify(item));
+          localStorage.setItem("items", JSON.stringify(items))
+          button.innerText = "View Cart";
+          clicked = true;
+        }
     });
   }
 }

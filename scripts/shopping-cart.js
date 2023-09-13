@@ -1,12 +1,22 @@
 let items = JSON.parse(localStorage.getItem("items"));
+let subtotal = 0.0
+subtotal = localStorage.setItem("subtotal", JSON.stringify(subtotal))
+items.forEach(item => {
+  subtotal += item.price
+});
 
-displayOrders(items);
+displayOrders(items, subtotal);
 
-function displayOrders(items) {
+function displayOrders(items, subtotal) {
   // -----ORDER-----
   let order = document.querySelector(".order");
   let receipt = document.querySelector(".receipt");
-  let priceTotal = 0.0;
+  let total = document.createElement("h2"); 
+  if ("subtotal" in localStorage) {
+    subtotal = JSON.parse(localStorage.getItem("subtotal"))
+  } else {
+    subtotal = localStorage.setItem("subtotal", JSON.stringify(subtotal))
+  }
   
 
   items.forEach((item) => {
@@ -28,30 +38,34 @@ function displayOrders(items) {
 
     quantityAdjustment.setAttribute("class", "quantity-adjustment");
     quantity.textContent = item.quantity;
-
+    
+    // Plus button click
     increase.setAttribute("src", "./images/add.png");
     increase.setAttribute("class", "quantity-icon");
-    // Add button click
     increase.addEventListener("click", () => {
+      subtotal = JSON.parse(localStorage.getItem("subtotal"))
+      subtotal = parseFloat(subtotal)
       item.quantity++;
       quantity.textContent = item.quantity;
-      item.price = (item.quantity * item.price)
+      subtotal += parseFloat(item.price);
+      total.textContent = `Subtotal: $${parseFloat(subtotal).toFixed(2)}`
       localStorage.setItem("items", JSON.stringify(items))
-      priceTotal += item.price;
-      total.textContent = `Subtotal: $${priceTotal.toFixed(2)}`
+      localStorage.setItem("subtotal", JSON.stringify(subtotal))
     });
-
+    
+    // Minus button click
     decrease.setAttribute("src", "./images/minus.png");
     decrease.setAttribute("class", "quantity-icon");
-    // Minus button click
     decrease.addEventListener("click", () => {
+      subtotal = JSON.parse(localStorage.getItem("subtotal"))
+      subtotal = parseFloat(subtotal)
       if(item.quantity > 1) {
         item.quantity--;
         quantity.textContent = item.quantity;
-        item.price = (item.quantity * item.price)
+        subtotal -= parseFloat(item.price);
+        total.textContent = `Subtotal: $${parseFloat(subtotal).toFixed(2)}`
         localStorage.setItem("items", JSON.stringify(items))
-        priceTotal -= item.price;
-        total.textContent = `Subtotal: $${priceTotal.toFixed(2)}`
+        localStorage.setItem("subtotal", JSON.stringify(subtotal))
       }
     });
 
@@ -62,10 +76,10 @@ function displayOrders(items) {
     order.append(card);
 
     // -----RECEIPT-----
-
-    priceTotal += parseFloat(item.price);
+    subtotal += parseFloat(item.price)
+    localStorage.setItem("subtotal", JSON.stringify(subtotal))
   });
-  let total = document.createElement("h2");  
-  total.textContent = `Subtotal: $${priceTotal.toFixed(2)}`
+   
+  total.textContent = `Subtotal: $${subtotal.toFixed(2)}`
   receipt.append(total);
 }

@@ -1,5 +1,6 @@
 const json =
   "https://benjamindowdle.github.io/Lush-and-Plush-Health/sources/products.json";
+  let items = [];
 
 async function apiFetch(json, func) {
   try {
@@ -19,12 +20,10 @@ apiFetch(json, createCard);
 
 function createCard(products) {
   let catalog = document.querySelector("#catalog");
-  let items = [];
-
   if ("items" in localStorage) {
     items = JSON.parse(localStorage.getItem("items"));
   } else {
-    items = [];
+    localStorage.setItem("items", JSON.stringify(items))
   }
 
   products.soaps.forEach((soap, index) => {
@@ -50,21 +49,26 @@ function createCard(products) {
     catalog.append(card);
 
     button.addEventListener("click", () => {
-      if (clicked == false) {
-        let item = {
+      items = JSON.parse(localStorage.getItem("items"))
+      let item = {
+          key: soap.id,
           name: soap.name,
           price: soap.price,
           small: soap.small,
           quantity: 1,
         };
-        items.push(item);
-        localStorage.setItem("items", JSON.stringify(items));
-
-        button.innerText = "View Cart";
-        clicked = true;
-      } else {
-        window.location.href = "shopping-cart.html";
-      }
+        if (clicked == true) {
+          window.location.href = "shopping-cart.html";
+        } else if (item.key in localStorage) {
+          window.alert("This item is already in the cart. Redirecting to the Cart...")
+          window.location.href = "shopping-cart.html";
+        } else {
+          items.push(item);
+          localStorage.setItem(item.key, JSON.stringify(item));
+          localStorage.setItem("items", JSON.stringify(items))
+          button.innerText = "View Cart";
+          clicked = true;
+        }
     });
   });
 }
